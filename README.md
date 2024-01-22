@@ -1,4 +1,4 @@
-#Description
+## Description
  This project is built for card reading coupled with tesseractOCR support library for nodejs to read card information and sending it back to angular.
 
 ## Development server
