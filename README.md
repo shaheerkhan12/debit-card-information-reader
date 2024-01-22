@@ -1,6 +1,5 @@
-# Test
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+#Description
+ This project is built for card reading coupled with tesseractOCR support library for nodejs to read card information and sending it back to angular.
 
 ## Development server
 
