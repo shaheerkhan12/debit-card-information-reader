@@ -1,0 +1,104 @@
+<div class="maindiv">
+  <div class="modalview">
+    <div></div>
+    <div style="padding: 10px; display: block   ;  height: 97%;">
+      <div class="container mt-5" style="height: 100%;    background: #000000;">
+        <!-- <h2>Angular Webcam Capture Image from Camera</h2> -->
+        <div class="col-md-12 webcam-holder">
+       
+          <div class="frame" style="--left: 19%; --top: 28%; --width: 52%; --height: 55%;" [ngStyle]="{'--left': condition ? '11.5%' : '23%','--width':condition? '77%':'52%','--height':condition?'166px':'46%' }"
+          >
+            <webcam 
+             [height]="358"
+            [trigger]="invokeObservable"
+            (imageCapture)="captureImg($event)"
+          ></webcam>
+          </div>
+          <div>
+            <div
+              class="onfido-sdk-ui-DocumentAuto-Overlay-frameContainer onfido-sdk-ui-DocumentAuto-Overlay-idle"
+            ></div>
+            <div
+              id="frame" [ngStyle]="{'margin':condition?'91px 30px 5px 30px':' 92px 114px 82px 104px','height':condition? '176px':'174px'}"
+              class="onfido-sdk-ui-DocumentAuto-Overlay-frame onfido-sdk-ui-DocumentAuto-Overlay-idle"
+            ></div>
+
+          </div>
+          <div class="onfido-sdk-ui-DocumentAuto-Overlay-footer">
+            <div class="onfido-sdk-ui-DocumentAuto-footer">
+              <div class="onfido-sdk-ui-DocumentAuto-instructions">
+                <span
+                  class="onfido-sdk-ui-DocumentAuto-title"
+                  role="heading"
+                  aria-level="1"
+                  aria-live="assertive"
+                  tabindex="-1"
+                  >Take a photo of the front of your card</span
+                >
+              </div>
+              <div>
+                <button
+                  type="button"
+                  aria-label="doc_auto_capture.button_accessibility"
+                  class="onfido-sdk-ui-DocumentAuto-btn"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12" style="position: relative;height:100px">
+          <img  style="     margin-left: 10px;
+          height: 117px;"
+          src="assets/beforeclick.svg" (click)="getSnapshot()" height="225px" />
+          <!-- <button class="btn btn-danger" ">
+            Capture Image
+          </button> -->
+        </div>
+        <div class="col-12">
+          <div style="color: white;">
+            {{data?.card_number}} {{data?.expiry_date}}     
+   
+
+          </div>
+          <div id="results">Your taken image manifests here...</div>
+          <div *ngIf="this.croppedImage" >
+              <!-- <img style="         height: 200px;
+              width: 300px; object-fit: fill;
+           " [src]="this.croppedImage" height="225px" /> -->
+            <img style="         height: 200px;
+            width: 300px; object-fit: fill;    border: 2px solid lightgreen;
+    border-radius: 5px;
+         " [src]="this.captured" height="225px" />
+          </div>
+        
+        </div>
+      </div>
+      
+
+
+      <!-- <div *ngIf="imageChangedEvent">
+        <image-cropper
+          [imageChangedEvent]="imageChangedEvent"
+          [maintainAspectRatio]="false"
+          [aspectRatio]="6 / 3"
+          format="png"
+          (imageCropped)="imageCropped($event)"
+          (imageLoaded)="imageLoaded($event)"
+          (cropperReady)="cropperReady()"
+          (loadImageFailed)="loadImageFailed()"
+      ></image-cropper>
+      </div>
+      
+      <div *ngIf="croppedImage">
+        <img width="200" height="300" [src]="croppedImage"  />
+      </div> -->
+
+      <!-- <input type="file" (change)="onFileSelected($event)" />
+        <button (click)="uploadImage()">Upload Image</button>
+        <p *ngIf="extractedText">Extracted Text: {{ extractedText }}</p> -->
+    </div>
+  
+  </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+video.mirrored{
+    transform: unset !important;
+  }
+video{
+    width: 100% !important;
+    // box-shadow: -1px 1px 10px 7px rgb(143 138 138 / 35%);
+    object-fit: cover;
+
+}
+.webcam-wrapper .camera-switch{
+  z-index: 1000;
+
+}
+.webcam-wrapper{
+    width: 100%;
+}
+@media (max-width: 479px){
+    video.mirrored{
+    height: 358px !important;
+    width:100% !important;
+    
+    }
+}
